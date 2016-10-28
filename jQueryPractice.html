@@ -3,13 +3,78 @@
   <head>
     <meta charset="utf-8">
     <title>jQuery Practice!</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+      .red{
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        margin-right: 100px;
+        float: left;
+      }
+        .red1{
+          height: 200px;
+          width: 200px;
+          background-color: red;
+          margin-right: 100px;
+          float: left;
+      }
+      #circle{
+        height: 200px;
+        width: 200px;
+        background-color: green;
+        border-radius: 100px;
+        float: left;
+      }
+    </style>
+
   </head>
   <body>
-    <script type="text/javascript">
+<div class="red"></div>
+<div class="red1"></div>
+<div id="circle"></div>
+<p>This is some text</p>
+<iframe src="http://www.cnn.com"></iframe>
 
-      
-    </script>
+<script type="text/javascript">
 
+
+$("iframe").hover(function(){
+  $("iframe").attr("src", "http://www.bbc.com");
+
+});
+
+
+$("#circle").click(function(){
+  $("p").html("The text has been changed");
+    alert($("p").html());
+
+});
+
+$(".red").hover(function(){
+  $("p").html("I have changed")
+})
+
+
+$(".red1").hover(function(){
+  $("p").html("I have changed back!")
+
+});
+
+
+$(".red").click(function(){
+  alert("Square Clicked")
+
+});
+
+
+$("div").click(function(){
+  alert("Div Clicked")
+
+});
+
+
+</script>
 
 
 
