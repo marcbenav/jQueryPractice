@@ -4,14 +4,85 @@
     <meta charset="utf-8">
     <title>Styling with jQuery</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-  </head>
-  <body>
+
+  <style>
+    .square{
+      height: 200px;
+      width:  200px;
+      background-color: #E3E3E3;
+      float: left;
+      margin-right: 30px;
+    }
+    .square1{
+      height: 200px;
+      width:  200px;
+      background-color: #E3E3E3;
+      float: left;
+      margin-right: 30px;
+    }
+    #circle{
+      height: 200px;
+      width:  200px;
+      border-radius: 100px;
+      background-color: #D5E3E2;
+      float: left;
+      margin-right: 30px;
+      position: relative;
+    }
+    </style>
+    </head>
 
 
+    <body>
 
+    <div class="square1"></div>
+    <div class="square"></div>
+    <div id="circle"></div>
+    <div id="demo">hello</div>
+    <button id="press">push me</buttom>
+    <button id="push">push me</buttom>
+    <script type="text/javascript">
 
+      $(".square1").click(function(){
+        $(this).fadeOut();
+      });
 
+      $("#circle").click(function(){
+        $(".square1, .square").fadeOut()
+      });
 
-    
+      $("#demo").click(function(){
+        $(this).hide()
+      });
+
+      $(".square").click(function(){
+        $(this).css("display", "none")
+
+      });
+      $("#press").click(function(){
+          $(".square1").fadeOut(2000, function(){
+            alert("Fade Complete!")
+
+          });
+      });
+
+      $("#push").click(function(){
+        $("#demo").animate()
+
+      });
+
+    $("#circle").click(function(){
+      $(this).animate({
+        width:"500px",
+        height:"500px",
+        borderRadius: "150px",
+        marginLeft: "300px"
+        },3000, function(){
+        alert("I have done it!")
+      });
+    });
+
+    </script>
+
   </body>
 </html>
